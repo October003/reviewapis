@@ -41,8 +41,14 @@ message ReplyReviewReply {
 }
 
 message AppealReviewRequest {
-
+	int64 reviewID = 1 [(validate.rules).int64 = {gt: 0}];
+	int64 storeID = 2 [(validate.rules).int64 = {gt: 0}];
+	string content = 3 [(validate.rules).string = {min_len: 2,max_len:200}];
+	string reason = 4 [(validate.rules).string = {min_len:2 , max_len:200}];
+	string picInfo = 5;
+	string videoInfo = 6;
 }
 message AppealReviewReply{
+    int64 appealID = 1;
     
 }
