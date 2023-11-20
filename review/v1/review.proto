@@ -12,7 +12,7 @@ option java_package = "api.review.v1";
 // 定义评价服务
 service review {
 	// c端 创建评价
-	rpc createreview (CreateReviewRequest) returns (CreateReviewReply){
+	rpc CreateReview(CreateReviewRequest) returns (CreateReviewReply){
 		option (google.api.http) = {
 			post: "/v1/review",
 			body: "*"
