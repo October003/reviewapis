@@ -37,7 +37,7 @@ message AuditReviewReply{
 
 }
 
-// 对审核进行申诉的请求参数
+// 对申诉进行审核的请求参数
 message AuditAppealRequest{
     int64 appealID = 1 [(validate.rules).int64 = {gt:0}];
     int64 reviewID = 2 [(validate.rules).int64 = {gt:0}];
@@ -47,7 +47,7 @@ message AuditAppealRequest{
     optional string opRemarks = 6;
 }
 
-// 对审核进行申诉的返回值
+// 对申诉进行审核的返回值
 message AuditAppealReply{
 
 }
