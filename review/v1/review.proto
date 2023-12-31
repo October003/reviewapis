@@ -58,6 +58,17 @@ service review {
 			body: "*"
 		};
 	};
+	// 根据商家id查询评价列表(分页)
+	rpc ListReviewByStoreID(ListReviewByStoreIDRequest) returns(ListReviewByStoreIDReply){}
+}
+
+message ListReviewByStoreIDRequest{
+	int64 storeID = 1 [(validate.rules).int64 = {gt: 0 }];
+	int32 page = 2 [(validate.rules).int64 = {gt: 0 }];
+	int32 size = 3 [(validate.rules).int64 = {gt: 0 }];
+}
+message ListReviewByStoreIDReply{
+	repeated ReviewInfo list = 1;
 }
 
 // C端 用户端 1.用户对商品进行评价 2.用户查看某条评价的详情 3.用户查看评价列表
